@@ -1,8 +1,6 @@
 <template>
   <div id="home">
-    <!-- <img alt="Vue logo" src="../assets/logo.png"> -->
-    <!-- 首页 -->
-    <img src="https://dj001.oss-cn-beijing.aliyuncs.com/test/yunchao/main.jpg" alt>
+    首页
   </div>
 </template>
 
@@ -14,9 +12,6 @@ export default {
   components: {
   },
   created() {
-    this.$http.getAllUsers().then(res => {
-      console.log(res, '222');
-    })
   }
 }
 </script>

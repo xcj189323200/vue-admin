@@ -4,13 +4,12 @@
  * @Date: 2018-08-27 13:49:09
  * @Last Modified time: 2018-08-27 13:49:09
  */
-import MutationsType from "./type"
+// import MutationsType from "./type"
 
 export default {
 
   //设置登陆信息
-  [MutationsType.SET_USERS](state, data={}) {
-    console.log(state,'----');
-     return state.users = data;
-  },
+  // [MutationsType.SET_TOKEN](state, data) {
+  //    return state.users.isLogin = data;
+  // },
 }

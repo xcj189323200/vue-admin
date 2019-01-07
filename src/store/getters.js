@@ -4,8 +4,7 @@
 
 export default {
     //用户信息getters  返回用户信息
-    getUser: state => {
-      return state.users;
+    getToken: state => {
+        return state.users.token;
     },
-
 };

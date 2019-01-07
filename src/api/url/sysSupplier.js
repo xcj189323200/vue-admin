@@ -21,7 +21,7 @@ export default {
     // 删除供货商
     deleteSupplier(data){
         return this.delete({
-            url: this.API_HOST +  `sys/supplier/${data.id}`,
+            url: this.API_HOST +  `sys/supplier/delete/${data.id}`,
             data: data
         })
     },
@@ -29,7 +29,7 @@ export default {
     //  获取供货商详情
     getSupplierDetail(data){
         return this.get({
-            url: this.API_HOST + `sys/supplier/${data.id}`,
+            url: this.API_HOST + `sys/supplier/getById/${data.id}`,
             data: data
         })
     },
@@ -37,7 +37,7 @@ export default {
     // 更新或保存供货商
     saveOrUpdataSupplier(data){
         return this.post({
-            url: this.API_HOST + `sys/supplier`,
+            url: this.API_HOST + `sys/supplier/saveOrUpdate`,
             data: data
         })
     },

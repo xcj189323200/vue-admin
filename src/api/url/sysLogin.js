@@ -13,5 +13,5 @@ export default {
             url: this.API_HOST + `user/authenticate`,
             data: data,
         });
-    }
+    },
 };

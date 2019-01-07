@@ -1,5 +1,5 @@
 <template>
-  <div id="app" >
+  <div id="app">
     <div v-if="$route.meta.isSide">
       <router-view></router-view>
     </div>
@@ -12,7 +12,11 @@
           <headers></headers>
         </el-header>
         <el-main>
-          <router-view></router-view>
+          <keep-alive>
+            <router-view v-if="$route.meta.keepAlive"></router-view>
+          </keep-alive>
+          <router-view v-if="!$route.meta.keepAlive"></router-view>
+          <!-- <router-view></router-view> -->
         </el-main>
         <!-- <el-footer>Footer</el-footer> -->
       </el-container>
@@ -31,25 +35,30 @@ export default {
   computed: {},
   data() {
     return {
-      minHeight: document.documentElement.clientHeight + "px",
+      minHeight: document.documentElement.clientHeight + "px"
     };
   },
   components: {
     headers,
     asideNav
   },
-  created() { },
-  mounted() { },
+  created() {},
+  mounted() {},
   watch: {}
 };
 </script>
 <style scoped lang="scss">
+#app {
+  width:100%;
+  height:100%;
+  box-sizing: border-box;
+}
 .el-header {
-    padding: 0 !important;
+  padding: 0 !important;
 }
 .el-main {
-    height: 100%;
-    position: relative;
+  height: 100%;
+  position: relative;
 }
 </style>
 

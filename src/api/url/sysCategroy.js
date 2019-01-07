@@ -69,15 +69,5 @@ export default {
             params,
         });
     },
-    /**
-     * @description 查看订单物流
-     * @date 2018-11-02
-     * @returns *
-     */
-    getDeliveryCompany(params) {
-        return this.get({
-            url: this.API_HOST + `sys/category/expressCompanyList`,
-            params,
-        });
-    },
+    
 };

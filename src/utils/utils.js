@@ -267,8 +267,9 @@ export default {
     filterParams(params, rules = []) {
         let _params = { ...params };
         for (let [key, value] of Object.entries(_params)) {
-            if (!value) delete _params[key];
-            if (rules.includes(key) && value === "0") delete _params[key];
+            if (!rules.includes(key)) {
+                if (!value) delete _params[key];
+            }
         }
         return _params;
     },
@@ -296,5 +297,28 @@ export default {
     downloadStream(data, flieName) {
         let url = window.URL.createObjectURL(new Blob([data]));
         this.toUrl(url, "_self", flieName);
+    },
+    /**
+     * @description 获得cookie
+     * @return {Object}  处理过的cookie
+     */
+    getCookie() {
+        let _cookie = document.cookie;
+        let datas = {};
+        if (_cookie) {
+            let _cookieArr = _cookie.split(";");
+            _cookieArr &&
+                _cookieArr.map(k => {
+                    if (k) {
+                        let _k = k.split("=");
+                        let _key = _k[0];
+                        if (this.isString(_k[0])) {
+                            _key = _k[0].trim();
+                        }
+                        datas[_key] = _k[1];
+                    }
+                });
+        }
+        return datas;
     },
 };

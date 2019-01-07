@@ -34,14 +34,6 @@ export default {
      * @returns {Boolean} 返回布尔值
      */
     isPhoneNum(str) {
-        return /^(0|86|17951)?(13[0-9]|15[012356789]|17[678]|18[0-9]|14[57])[0-9]{8}$/.test(str);
-    },
-    /**
-     * @description  判断是否为URL地址
-     * @param  {String} str  【必须按】 需要判断的字符串
-     * @returns {Boolean} 返回布尔值
-     */
-    isUrl(str) {
-        return /[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/i.test(str);
+        return /^[0]?\d{2,3}[- ]?\d{7,8}$|(?:^1[3456789]|^9[28])\d{9}$/.test(str);
     },
 };

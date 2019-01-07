@@ -1,10 +1,10 @@
 <template>
   <div class="g_labelItem" :style="{width:width}">
     <el-row>
-      <el-col :span="7" >
+      <el-col :span="labelCol" >
         <div v-html="label"></div>
       </el-col>
-      <el-col :span="17">
+      <el-col :span="24-labelCol">
         <slot></slot>
       </el-col>
     </el-row>
@@ -20,7 +20,14 @@
   * @Description: ui 组件 ---- 类似label 组件
   */
 export default {
-  props: ['label','width'],
+   props: {
+    label: String,
+    width: String,
+    labelCol: {
+      type: Number,
+      default:7
+    },
+  },
   components: {
   },
   data() {

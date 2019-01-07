@@ -4,7 +4,7 @@
 
 export default {
     // 品牌列表
-    getNewBrand(params){
+    brandList(params){
         return this.get({
             url: this.API_HOST +  `sys/brand/brandList`,
             params

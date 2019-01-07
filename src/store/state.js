@@ -7,6 +7,7 @@
 export default {
     //用户的登陆信息和token
     users: {
-        name:'一只小怪兽'
+        // isLogin: false,
+        // token:''
     },
 };

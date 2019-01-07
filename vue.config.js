@@ -17,7 +17,7 @@ module.exports = {
             filename: "index.html",
             // 当使用 title 选项时，
             // template 中的 title 标签需要是 <title><%= htmlWebpackPlugin.options.title %></title>
-            title: "店家云巢管理平台",
+            title: "店佳云巢管理平台",
             // 在这个页面中包含的块，默认情况下会包含
             // 提取出来的通用 chunk 和 vendor chunk。
             chunks: ["chunk-vendors", "chunk-common", "app"],
@@ -26,11 +26,25 @@ module.exports = {
     lintOnSave: Config[_ENV]["isEsLint"], //是否开启Eslint
     productionSourceMap: Config[_ENV]["isSorceMap"], //是否开启sourceMap
     devServer: {
+        host: "0.0.0.0",
+        allowedHosts: ["localhost.17dianjia.net"],
         port: Config["development"].port,
+        open: "Google Chrome",
+        compress: true,
+        historyApiFallback: true, //当使用 HTML5 History API 时，任意的 404 响应都可能需要被替代为 index.html
         overlay: {
             warnings: true,
             errors: true, // 为true的时候 将不能报错
         },
+        // proxy: {
+        //     "/api": {
+        //         target: "http://47.93.178.138:8010/api/",
+        //         changeOrigin: true,
+        //         pathRewrite: {
+        //             "^/api": "",
+        //         },
+        //     },
+        // },
     },
     css: {
         loaderOptions: {
@@ -59,7 +73,6 @@ module.exports = {
                 "@contants": Utils.resolve("../src/contants"),
             },
         },
-        plugins: [
-        ],
+        plugins: [],
     },
 };

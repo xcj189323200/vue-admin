@@ -53,6 +53,17 @@ export default {
         })
     },
     /**
+     * @description 查看订单物流列表
+     * @date 2018-11-02
+     * @returns *
+     */
+    getDeliveryCompany(params) {
+        return this.get({
+            url: this.API_HOST + `sys/express/expressCompanyList`,
+            params,
+        });
+    },
+    /**
      * @description 查询订单统计信息
      * @date 2018-11-02
      * @param {*} orderId 订单id
@@ -60,7 +71,7 @@ export default {
      */
     getAllObserverData(params){
         return this.get({
-            url: this.API_HOST + `orderStatisticses/search`,
+            url: this.API_HOST + `sys/orderStatisticses/search`,
             params
         })
     },
@@ -72,7 +83,7 @@ export default {
      */
     getSumObserverData(params){
         return this.get({
-            url: this.API_HOST + `orderStatisticses/summary`,
+            url: this.API_HOST + `sys/orderStatisticses/summary`,
             params
         })
     },
@@ -97,9 +108,27 @@ export default {
      */
     getorderExport(params){
         return this.get({
-            url: this.API_HOST + `orderStatisticses/export`,
+            url: this.API_HOST + `sys/orderStatisticses/export`,
             params,
             responseType:'blob'
+        })
+    },
+    /**
+     * @description 批量发货
+     * @date 2018-11-30
+     * @param {*} data 订单文件
+     * @returns *
+     */
+    getorderImport(data){
+        return this.post({
+            // url: this.API_HOST + `sys/order/ordersDelivery`,
+            url: this.API_HOST + 'sys/order/ordersDelivery',
+            data,
+            responseType:'blob',
+            headers: {
+                Authorization: localStorage.getItem("token"),
+                'Content-Type': 'multipart/form-data'
+            }
         })
     },
 }

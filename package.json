@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "vue-cli-service serve  --open --copy --mode dev",
+    "dev": "vue-cli-service serve --copy --mode dev",
     "pro": "vue-cli-service build  --mode pro",
     "test": "vue-cli-service build  --mode test",
     "lint": "vue-cli-service lint",
@@ -11,7 +11,9 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
-    "element-ui": "^2.4.10",
+    "element-ui": "^2.4.11",
+    "fundebug-javascript": "^1.4.0",
+    "js-cookie": "^2.2.0",
     "lodash": "^4.17.11",
     "moment": "^2.22.2",
     "register-service-worker": "^1.0.0",

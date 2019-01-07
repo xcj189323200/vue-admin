@@ -6,5 +6,5 @@
  */
 
 export default {
-    SET_USERS: "SET_USERS" // 设置用户信息
+    SET_TOKEN: "SET_TOKEN" // 设置用户信息
 };
